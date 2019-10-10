@@ -1,1 +1,25 @@
 // Mixins in here
+
+.flexWhenMobile(@direction: column, @wrap: nowrap){
+    @media @mobile{
+        flex-flow: @direction @wrap;
+    }
+}
+
+.fullWidthWhenMobile{
+    @media @mobile{
+        width: 100%;
+    }
+}
+
+.customButton(@bgColor: #9090ff, @txtColor: #ffffff){
+    
+    .fullWidthWhenMobile();
+    
+    border: none;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: @bgColor;
+    color: @txtColor;
+}
